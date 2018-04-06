@@ -1,7 +1,4 @@
-# Rack::LiveReload
-
-<a href="http://travis-ci.org/onesupercoder/rack-livereload"><img src="https://secure.travis-ci.org/onesupercoder/rack-livereload.png" /></a>
-[![Code Climate](https://codeclimate.com/github/onesupercoder/rack-livereload.png)](https://codeclimate.com/github/onesupercoder/rack-livereload)
+# Rack::LiveReload [![Build Status](https://travis-ci.org/onesupercoder/rack-livereload.svg?branch=master)](https://travis-ci.org/onesupercoder/rack-livereload) [![Maintainability](https://api.codeclimate.com/v1/badges/6b3cafaf0d8752d0ac55/maintainability)](https://codeclimate.com/github/onesupercoder/rack-livereload/maintainability)
 
 Hey, you've got [LiveReload](http://livereload.com/) in my [Rack](http://rack.rubyforge.org/)!
 No need for browser extensions anymore! Just plug it in your middleware stack and go!
