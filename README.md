@@ -10,10 +10,16 @@ Use this with [guard-livereload](http://github.com/guard/guard-livereload) for m
 
 ### Rails
 
-Add the gem to your Gemfile.
+Add the gem to your `Gemfile`.
 
 ```ruby
-gem "rack-livereload", group: :development
+gem 'rack-livereload', github: 'mpptx/rack-livereload'
+```
+
+If you want to install the original gem, add the following to your `Gemfile`:
+
+```ruby
+gem 'rack-livereload', group: :development
 ```
 
 Then add the middleware to your Rails middleware stack by editing your `config/environments/development.rb`.
@@ -39,6 +45,7 @@ end
 config.middleware.use(Rack::LiveReload,
   min_delay        : 500,    # default 1000
   max_delay        : 10_000, # default 60_000
+  live_reload_host : '0.0.0.0',  # default 35729
   live_reload_port : 56789,  # default 35729
   host             : 'myhost.cool.wow',
   ignore           : [ %r{dont/modify\.html$} ]

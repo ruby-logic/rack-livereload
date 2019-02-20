@@ -50,6 +50,16 @@ describe Rack::LiveReload::BodyProcessor do
 
       it { should_not use_vendored }
     end
+    context 'with custom host' do
+      let(:options) { {:live_reload_host => '127.0.0.1'}}
+
+      context 'exists' do
+        before do
+          stub_request(:any, '127.0.0.1:35729/livereload.js')
+        end
+        it { should_not use_vendored }
+      end
+    end
 
     context 'with custom port' do
       let(:options) { {:live_reload_port => '12348'}}
@@ -121,6 +131,14 @@ describe Rack::LiveReload::BodyProcessor do
         it 'should prepend the relative path to the script src' do
           body_dom.at_css("script:eq(5)")[:src].should match(%r{^/a_relative_path/})
         end
+      end
+    end
+
+    describe "LIVERELOAD_HOST value" do
+      let(:options) { { :live_reload_host => '127.0.0.1' }}
+
+      it "sets the variable at the top of the file" do
+        processed_body.should include 'RACK_LIVERELOAD_HOST = 127.0.0.1'
       end
     end
 
