@@ -1,4 +1,4 @@
-# Rack::LiveReload [![Build Status](https://travis-ci.org/onesupercoder/rack-livereload.svg?branch=master)](https://travis-ci.org/onesupercoder/rack-livereload) [![Maintainability](https://api.codeclimate.com/v1/badges/6b3cafaf0d8752d0ac55/maintainability)](https://codeclimate.com/github/onesupercoder/rack-livereload/maintainability)
+# Rack::LiveReload
 
 Hey, you've got [LiveReload](http://livereload.com/) in my [Rack](http://rack.rubyforge.org/)!
 No need for browser extensions anymore! Just plug it in your middleware stack and go!
@@ -45,7 +45,7 @@ end
 config.middleware.use(Rack::LiveReload,
   min_delay        : 500,    # default 1000
   max_delay        : 10_000, # default 60_000
-  live_reload_host : '0.0.0.0',  # default 35729
+  live_reload_host : '0.0.0.0',  # default localhost
   live_reload_port : 56789,  # default 35729
   host             : 'myhost.cool.wow',
   ignore           : [ %r{dont/modify\.html$} ]
