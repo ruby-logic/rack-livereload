@@ -12,8 +12,6 @@ Gem::Specification.new do |s|
   s.summary     = %q{Insert LiveReload into your app easily as Rack middleware}
   s.description = %q{Insert LiveReload into your app easily as Rack middleware}
 
-  s.rubyforge_project = "rack-livereload"
-
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
